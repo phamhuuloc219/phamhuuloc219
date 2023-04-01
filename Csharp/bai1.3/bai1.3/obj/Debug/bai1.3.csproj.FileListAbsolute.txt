@@ -1,0 +1,8 @@
+D:\Csharp\bai1.3\bai1.3\bin\Debug\bai1.3.exe.config
+D:\Csharp\bai1.3\bai1.3\bin\Debug\bai1.3.exe
+D:\Csharp\bai1.3\bai1.3\bin\Debug\bai1.3.pdb
+D:\Csharp\bai1.3\bai1.3\obj\Debug\bai1.3.csproj.AssemblyReference.cache
+D:\Csharp\bai1.3\bai1.3\obj\Debug\bai1.3.csproj.SuggestedBindingRedirects.cache
+D:\Csharp\bai1.3\bai1.3\obj\Debug\bai1.3.csproj.CoreCompileInputs.cache
+D:\Csharp\bai1.3\bai1.3\obj\Debug\bai1.3.exe
+D:\Csharp\bai1.3\bai1.3\obj\Debug\bai1.3.pdb

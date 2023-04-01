@@ -1,0 +1,8 @@
+D:\Csharp\baikiemtra\baikiemtra\bin\Debug\baikiemtra.exe.config
+D:\Csharp\baikiemtra\baikiemtra\bin\Debug\baikiemtra.exe
+D:\Csharp\baikiemtra\baikiemtra\bin\Debug\baikiemtra.pdb
+D:\Csharp\baikiemtra\baikiemtra\obj\Debug\baikiemtra.csproj.AssemblyReference.cache
+D:\Csharp\baikiemtra\baikiemtra\obj\Debug\baikiemtra.csproj.SuggestedBindingRedirects.cache
+D:\Csharp\baikiemtra\baikiemtra\obj\Debug\baikiemtra.csproj.CoreCompileInputs.cache
+D:\Csharp\baikiemtra\baikiemtra\obj\Debug\baikiemtra.exe
+D:\Csharp\baikiemtra\baikiemtra\obj\Debug\baikiemtra.pdb
