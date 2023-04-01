@@ -1,0 +1,16 @@
+Player Name :PHAM HUU LOC
+Played Date:Sat Jun 04 15:04:48 2022
+Score:14
+___________________________________________________
+Player Name :Kiet
+Played Date:Sat Jun 04 15:10:27 2022
+Score:9
+___________________________________________________
+Player Name :Loc
+Played Date:Sun Jun 05 22:39:26 2022
+Score:2
+___________________________________________________
+Player Name :  Loc
+Played Date:Thu Oct 06 19:18:55 2022
+Score:0
+___________________________________________________
