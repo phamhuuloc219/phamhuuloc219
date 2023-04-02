@@ -1,8 +1,0 @@
-D:\Csharp\bai1.1\bai1.1\bin\Debug\bai1.1.exe.config
-D:\Csharp\bai1.1\bai1.1\bin\Debug\bai1.1.exe
-D:\Csharp\bai1.1\bai1.1\bin\Debug\bai1.1.pdb
-D:\Csharp\bai1.1\bai1.1\obj\Debug\bai1.1.csproj.AssemblyReference.cache
-D:\Csharp\bai1.1\bai1.1\obj\Debug\bai1.1.csproj.SuggestedBindingRedirects.cache
-D:\Csharp\bai1.1\bai1.1\obj\Debug\bai1.1.csproj.CoreCompileInputs.cache
-D:\Csharp\bai1.1\bai1.1\obj\Debug\bai1.1.exe
-D:\Csharp\bai1.1\bai1.1\obj\Debug\bai1.1.pdb

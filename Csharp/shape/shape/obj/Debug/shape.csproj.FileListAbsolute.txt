@@ -1,8 +1,0 @@
-D:\Csharp\shape\shape\bin\Debug\shape.exe.config
-D:\Csharp\shape\shape\bin\Debug\shape.exe
-D:\Csharp\shape\shape\bin\Debug\shape.pdb
-D:\Csharp\shape\shape\obj\Debug\shape.csproj.AssemblyReference.cache
-D:\Csharp\shape\shape\obj\Debug\shape.csproj.SuggestedBindingRedirects.cache
-D:\Csharp\shape\shape\obj\Debug\shape.csproj.CoreCompileInputs.cache
-D:\Csharp\shape\shape\obj\Debug\shape.exe
-D:\Csharp\shape\shape\obj\Debug\shape.pdb

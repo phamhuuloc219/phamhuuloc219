@@ -1,3 +1,0 @@
-D:\Csharp\bai2.5\bai2.5\obj\Debug\bai2.5.csproj.AssemblyReference.cache
-D:\Csharp\bai2.5\bai2.5\obj\Debug\bai2.5.csproj.SuggestedBindingRedirects.cache
-D:\Csharp\bai2.5\bai2.5\obj\Debug\bai2.5.csproj.CoreCompileInputs.cache

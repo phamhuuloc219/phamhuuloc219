@@ -1,8 +1,0 @@
-D:\Csharp\shape2\shape2\bin\Debug\shape2.exe.config
-D:\Csharp\shape2\shape2\bin\Debug\shape2.exe
-D:\Csharp\shape2\shape2\bin\Debug\shape2.pdb
-D:\Csharp\shape2\shape2\obj\Debug\shape2.csproj.AssemblyReference.cache
-D:\Csharp\shape2\shape2\obj\Debug\shape2.csproj.SuggestedBindingRedirects.cache
-D:\Csharp\shape2\shape2\obj\Debug\shape2.csproj.CoreCompileInputs.cache
-D:\Csharp\shape2\shape2\obj\Debug\shape2.exe
-D:\Csharp\shape2\shape2\obj\Debug\shape2.pdb
