@@ -1,123 +1,132 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Xe
 {
-    public string bienSo;
-    public int namSanXuat;
-    public double gia;
+    public string BienSo { get; set; }
+    public int NamSanXuat { get; set; }
+    public double Gia { get; set; }
+
     public Xe()
     {
-        bienSo = "";
-        namSanXuat = 0;
-        gia = 0;
+        BienSo = "";
+        NamSanXuat = 0;
+        Gia = 0.0;
     }
-    public Xe(string bs, int nsx, double g)
+
+    public Xe(string bienSo, int namSanXuat, double gia)
     {
-        this.bienSo = bs;
-        this.namSanXuat = nsx;
-        this.gia = g;
+        BienSo = bienSo;
+        NamSanXuat = namSanXuat;
+        Gia = gia;
     }
+
     public virtual void Nhap()
     {
         Console.Write("Nhap bien so: ");
-        bienSo = Console.ReadLine();
+        BienSo = Console.ReadLine();
         Console.Write("Nhap nam san xuat: ");
-        namSanXuat = int.Parse(Console.ReadLine());
+        NamSanXuat = int.Parse(Console.ReadLine());
         Console.Write("Nhap gia: ");
-        gia = double.Parse(Console.ReadLine());
+        Gia = double.Parse(Console.ReadLine());
     }
+
     public virtual void Xuat()
     {
-        Console.WriteLine("-------------------------------------");
-        Console.WriteLine("Bien so: {0}", bienSo);
-        Console.WriteLine("Nam san xuat: {0}", namSanXuat);
-        Console.WriteLine("Gia: {0} trieu dong", gia);
-    }
-    public double Gia
-    {
-        get { return gia; }
+        Console.WriteLine("Bien so: {0}", BienSo);
+        Console.WriteLine("Nam san xuat: {0}", NamSanXuat);
+        Console.WriteLine("Gia: {0} trieu dong", Gia);
     }
 }
+
 class XeCon : Xe
 {
-    private int soChoNgoi;
-    private string loaiXe;
+    public int SoChoNgoi { get; set; }
+    public string LoaiXe { get; set; }
+
     public XeCon() : base()
     {
-        soChoNgoi = 0;
-        loaiXe = "";
+        SoChoNgoi = 0;
+        LoaiXe = "";
     }
-    public XeCon(string bs, int nsx, double g, int scn, string lx) : base(bs, nsx, g)
+
+    public XeCon(string bienSo, int namSanXuat, double gia, int soChoNgoi, string loaiXe)
+        : base(bienSo, namSanXuat, gia)
     {
-        soChoNgoi = scn;
-        loaiXe = lx;
+        SoChoNgoi = soChoNgoi;
+        LoaiXe = loaiXe;
     }
+
     public override void Nhap()
     {
         base.Nhap();
         Console.Write("Nhap so cho ngoi: ");
-        soChoNgoi = int.Parse(Console.ReadLine());
-        Console.Write("Nhap loai xe (sedal/SUV/ban tai): ");
-        loaiXe = Console.ReadLine();
-        Console.WriteLine("-------------------------------------");
+        SoChoNgoi = int.Parse(Console.ReadLine());
+        Console.Write("Nhap loai xe: ");
+        LoaiXe = Console.ReadLine();
     }
+
     public override void Xuat()
     {
         base.Xuat();
-        Console.WriteLine("So cho ngoi: {0}", soChoNgoi);
-        Console.WriteLine("Loai xe: {0}", loaiXe);
+        Console.WriteLine("So cho ngoi: {0}", SoChoNgoi);
+        Console.WriteLine("Loai xe: {0}", LoaiXe);
     }
 }
+
 class Program
 {
     static void Main(string[] args)
     {
-        List<XeCon> listXeCon = new List<XeCon>();
-        int n;
+        List<XeCon> dsXeCon = new List<XeCon>();
         Console.Write("Nhap so luong xe con: ");
-        n = int.Parse(Console.ReadLine());
+        int n = int.Parse(Console.ReadLine());
+
         for (int i = 0; i < n; i++)
         {
-            XeCon xeCon = new XeCon();
-            xeCon.Nhap();
-            listXeCon.Add(xeCon);
+            Console.WriteLine("Nhap thong tin xe thu {0}", i + 1);
+            XeCon xe = new XeCon();
+            xe.Nhap();
+            dsXeCon.Add(xe);
         }
-        // In ra danh sach xe va thong so kem theo
-        foreach (XeCon xeCon in listXeCon)
+
+        Console.WriteLine("Danh sach xe:");
+        foreach (XeCon xe in dsXeCon)
         {
-            xeCon.Xuat();
-            Console.WriteLine();
+            xe.Xuat();
+            Console.WriteLine("------------------------------");
         }
+
         // Tim xe co gia thap nhat, cao nhat
-        double minGia = listXeCon[0].Gia;
-        double maxGia = listXeCon[0].Gia;
-        XeCon xeMinGia = listXeCon[0];
-        XeCon xeMaxGia = listXeCon[0];
-        for (int i = 1; i < listXeCon.Count; i++)
+        XeCon xeGiaThapNhat = dsXeCon.OrderBy(x => x.Gia).First();
+        XeCon xeGiaCaoNhat = dsXeCon.OrderByDescending(x => x.Gia).First();
+        Console.WriteLine("Xe co gia thap nhat:");
+        xeGiaThapNhat.Xuat();
+        Console.WriteLine("Xe co gia cao nhat:");
+        xeGiaCaoNhat.Xuat();
+
+        // Tim xe thuoc tinh
+        Console.Write("Nhap 2 chu so dau cua bien so xe: ");
+        string tinh = Console.ReadLine();
+        Console.WriteLine("Xe thuoc tinh {0}:", tinh);
+        foreach (XeCon xe in dsXeCon)
         {
-            if (listXeCon[i].Gia < minGia)
+            if (xe.BienSo.StartsWith(tinh))
             {
-                minGia = listXeCon[i].Gia;
-                xeMinGia = listXeCon[i];
-            }
-            if (listXeCon[i].Gia > maxGia)
-            {
-                maxGia = listXeCon[i].Gia;
-                xeMaxGia = listXeCon[i];
+                xe.Xuat();
+                Console.WriteLine("------------------------------");
             }
         }
 
-        Console.WriteLine("-------------------------------------");
-        Console.WriteLine("Xe co gia thap nhat:");
-        xeMinGia.Xuat();
-        Console.WriteLine();
-
-        Console.WriteLine("-------------------------------------");
-        Console.WriteLine("Xe co gia cao nhat:");
-        xeMaxGia.Xuat();
-        Console.WriteLine();        
-
+        // Sap xep danh sach xe theo nam san xuat
+        dsXeCon = dsXeCon.OrderBy(x => x.NamSanXuat).ToList();
+        Console.WriteLine("Danh sach xe sau khi sap xep:");
+        foreach (XeCon xe in dsXeCon)
+        {
+            xe.Xuat();
+            Console.WriteLine("------------------------------");
+        }
         Console.ReadLine();
     }
 }

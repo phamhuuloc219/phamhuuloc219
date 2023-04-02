@@ -1,83 +1,128 @@
 ﻿using System;
 using System.Collections.Generic;
 
-class NhanVien
+namespace Company
 {
-    protected string hoTen;
-    protected DateTime ngaySinh;
-    protected double luong;
-    public NhanVien(string hoTen, DateTime ngaySinh)
+    class NhanVien
     {
-        this.hoTen = hoTen;
-        this.ngaySinh = ngaySinh;
-    }
-    public virtual void TinhLuong(){}
-    public override string ToString()
-    {
-        return $"-{hoTen}:\n +{ngaySinh.ToString("dd/MM/yyyy")} \n +Luong:{luong}\n";
-    }
-}
-class NhanVienVanPhong : NhanVien
-{
-    private int soNgayLamViec;
-    public NhanVienVanPhong(string hoTen, DateTime ngaySinh, int soNgayLamViec) : base(hoTen, ngaySinh)
-    {
-        this.soNgayLamViec = soNgayLamViec;
-    }
-    public override void TinhLuong()
-    {
-        luong = soNgayLamViec * 100000;
-    }
-}
-class NhanVienSanXuat : NhanVien
-{
-    private int soSanPham;
-    public NhanVienSanXuat(string hoTen, DateTime ngaySinh, int soSanPham) : base(hoTen, ngaySinh)
-    {
-        this.soSanPham = soSanPham;
-    }
-    public override void TinhLuong()
-    {
-        luong = 1000000 + soSanPham * 5000;
-    }
-}
-class Program
-{
-    static void Main(string[] args)
-    {
-        List<NhanVien> danhSachNhanVien = new List<NhanVien>();
-        Console.Write("Nhap so luong nhan vien: ");
-        int n = int.Parse(Console.ReadLine());
-        for (int i = 0; i < n; i++)
+        public string Ten;
+        public DateTime NgaySinh;
+        public double Luong;
+
+        public NhanVien(string Ten, DateTime NgaySinh, double Luong)
         {
-            Console.WriteLine($"Nhap thong tin cho nhan vien thu {i + 1}:");
-            Console.Write("Ho ten: ");
-            string hoTen = Console.ReadLine();
-            Console.Write("Ngay sinh (dd/MM/yyyy): ");
-            DateTime ngaySinh = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
-            Console.Write("Loai nhan vien (1 - Nhan vien van phong, 2 - Nhan vian san xuat): ");
-            int loaiNhanVien = int.Parse(Console.ReadLine());
-            if (loaiNhanVien == 1)
-            {
-                Console.Write("So ngay lam viec: ");
-                int soNgayLamViec = int.Parse(Console.ReadLine());
-                NhanVienVanPhong nhanVienVanPhong = new NhanVienVanPhong(hoTen, ngaySinh, soNgayLamViec);
-                danhSachNhanVien.Add(nhanVienVanPhong);
-            }
-            else if (loaiNhanVien == 2)
-            {
-                Console.Write("So san pham: ");
-                int soSanPham = int.Parse(Console.ReadLine());
-                NhanVienSanXuat nhanVienSanXuat = new NhanVienSanXuat(hoTen, ngaySinh, soSanPham);
-                danhSachNhanVien.Add(nhanVienSanXuat);
-            }
+            this.Ten = Ten;
+            this.NgaySinh = NgaySinh;
+            this.Luong = Luong;
         }
-        Console.WriteLine("Danh sach nhan vien:");
-        foreach (NhanVien nhanVien in danhSachNhanVien)
+
+        public virtual void TinhLuong()
         {
-            nhanVien.TinhLuong();
-            Console.WriteLine(nhanVien.ToString());
+            // do nothing in base class
         }
-        Console.ReadLine();
+
+        public override string ToString()
+        {
+            return string.Format("{0,-20} {1,-15} {2,10}", Ten, NgaySinh.ToShortDateString(), Luong.ToString("#,##0"));
+        }
+    }
+
+    class NVVP : NhanVien
+    {
+        public int NgayLamViec;
+
+        public NVVP(string Ten, DateTime NgaySinh, int NgayLamViec)
+            : base(Ten, NgaySinh, 0)
+        {
+            this.NgayLamViec = NgayLamViec;
+        }
+
+        public override void TinhLuong()
+        {
+            Luong = NgayLamViec * 100000;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + string.Format(" {0,10}", NgayLamViec);
+        }
+    }
+
+    class NVSX : NhanVien
+    {
+        public int SanPham;
+
+        public NVSX(string Ten, DateTime NgaySinh, int SanPham)
+            : base(Ten, NgaySinh, 0)
+        {
+            this.SanPham = SanPham;
+        }
+
+        public override void TinhLuong()
+        {
+            Luong = 2000000 + SanPham * 5000;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString() + string.Format(" {0,10}", SanPham);
+        }
+    }
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<NhanVien> NhanViens = new List<NhanVien>();
+
+            Console.Write("Nhap so luong nhan vien: ");
+            int n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write("Nhap loai nhan vien (1 nhan vien van phong, 2 nhan vien san xuat): ");
+                int type = int.Parse(Console.ReadLine());
+
+                Console.Write("Nhap ten: ");
+                string Ten = Console.ReadLine();
+
+                Console.Write("Nhap ngay sinh (dd/mm/yyyy): ");
+                DateTime NgaySinh = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+
+                if (type == 1)
+                {
+                    Console.Write("Nhap so ngay lam viec: ");
+                    int NgayLamViec = int.Parse(Console.ReadLine());
+
+                    NhanViens.Add(new NVVP(Ten, NgaySinh, NgayLamViec));
+                }
+                else if (type == 2)
+                {
+                    Console.Write("Nhap so luong san pham: ");
+                    int SanPham = int.Parse(Console.ReadLine());
+
+                    NhanViens.Add(new NVSX(Ten, NgaySinh, SanPham));
+                }
+            }
+
+            Console.WriteLine("\nDanh sach nhan vien:");
+            Console.WriteLine("{0,-20} {1,-15} {2,10} {3,10}", "Ten", "Ngay sinh", "Tien luong", "(Ngay lam viec/San pham)");
+            foreach (NhanVien NhanVien in NhanViens)
+            {
+                NhanVien.TinhLuong();
+                Console.WriteLine(NhanVien);
+            }
+
+            NhanViens.Sort((x, y) => y.Luong.CompareTo(x.Luong));
+
+            Console.WriteLine("\nDanh sach nhan vien luong giam dan:");
+            Console.WriteLine("{0,-20} {1,-15} {2,10} {3,10}", "Ten", "Ngay sinh", "Tien luong", "(Ngay lam viec/San pham)");
+            foreach (NhanVien NhanVien in NhanViens)
+            {
+                Console.WriteLine(NhanVien);
+            }
+
+            Console.ReadKey();
+        }
     }
 }
