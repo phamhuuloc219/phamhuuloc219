@@ -2,7 +2,8 @@
 
 <!--
 **phamhuuloc219/phamhuuloc219** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-<img src="https://photos.google.com/u/2/photo/AF1QipOfPGXwWdQwFrGgwvgzArpWpjcBx3NwvMtQBnOP?raw=true">
+
+<img src="https://photos.google.com/u/2/photo/AF1QipOfPGXwWdQwFrGgwvgzArpWpjcBx3NwvMtQBnOP">
 Here are some ideas to get you started:
 Hi ~
 - 🔭 I’m currently working on ...
