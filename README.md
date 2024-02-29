@@ -1,8 +1,8 @@
-### Hi there 👋
+### Hey everyone 👋, I'm Pham Huu Loc, AKA the PHL
 
 <!--
 **phamhuuloc219/phamhuuloc219** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
+<img src="https://photos.google.com/u/2/photo/AF1QipOfPGXwWdQwFrGgwvgzArpWpjcBx3NwvMtQBnOP">
 Here are some ideas to get you started:
 
 - 🔭 I’m currently working on ...
