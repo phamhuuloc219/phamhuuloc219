@@ -1,6 +1,6 @@
 ### Hey everyone 👋, I'm Pham Huu Loc
 
-<img src="https://github.com/phamhuuloc219/phamhuuloc219/blob/main/Images/PXL_20220409_124032784.PORTRAIT~2.jpg">
+<img src="https://github.com/phamhuuloc219/phamhuuloc219/blob/main/Images/PXL_20220409_124032784.PORTRAIT~2.jpg" width="40%">
  
 <!--
 **phamhuuloc219/phamhuuloc219** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
