@@ -49,7 +49,7 @@
 </a>
 <br>
 <a href="https://phamhuuloc219.github.io/">
-  <p>&nbsp;
+  <p>
     <img align="center" src="https://github-readme-stats.vercel.app/api?username=phamhuuloc219&show_icons=true&locale=en" alt="phamhuuloc219" />
   </p>
 </a>
