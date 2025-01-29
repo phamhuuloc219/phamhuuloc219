@@ -39,9 +39,9 @@
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> 
   </a>
 </p>
-<p align="left"> 
+<!--<p align="left">
   <img src="https://komarev.com/ghpvc/?username=phamhuuloc219&label=Profile%20views&color=0e75b6&style=flat" alt="phamhuuloc219" />
-</p>
+</p> -->
 <a href="https://phamhuuloc219.github.io/">
   <p>
     <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=phamhuuloc219&show_icons=true&locale=en&layout=compact" alt="phamhuuloc219" />
