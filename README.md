@@ -1,7 +1,7 @@
 <h1 align="center">Hi👋, I'm Pham Huu Loc</h1>
-<p align="left">
+<!--<p align="left">
   <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=phamhuuloc219" alt="phamhuuloc219" /></a>
-</p>
+</p>-->
 <ul>
   <li>🔭 I’m currently studying at <b>Nha Trang University</b></li>
   <li>⚡ Fun fact <b>I am Extremely Happy Guy!</b></li>
